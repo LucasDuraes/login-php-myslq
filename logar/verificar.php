@@ -15,11 +15,20 @@ class verificar{
     }
     public function buscaregistros($user, $senha){
         $val_registro = array();//validação de registros
-        $cmd = $this->pdo->prepare("SELECT `usuario`, `nome` FROM `registro-login` WHERE `usuario`=:ue OR `email`=:ue ;");
+        $cmd = $this->pdo->prepare("SELECT `usuario`, `nome` FROM `registro-login` WHERE `usuario`=:ue AND `senha`=SHA1(:se);");
         $cmd->bindValue(":ue", $user);
+        $cmd->bindValue(":se", $senha);
         $cmd->execute();
-        $val_registro = $cmd->fetchAll(PDO::FETCH_ASSOC);
-        return $val_registro;
+        $val_registro = $cmd->fetch(PDO::FETCH_ASSOC);
+        if (empty($val_registro)) {
+            //se for false
+            return false;
+            exit();
+        } else {
+            //se for true
+            return $val_registro;
+        }
+        
     }
 }
 
