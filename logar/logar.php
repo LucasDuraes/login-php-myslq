@@ -32,8 +32,9 @@
     <?php
         if (isset($_POST['usuario'])) {
             $user = addslashes(htmlspecialchars($_POST['usuario']));
-            $senha = addslashes(htmlspecialchars($_POST['senha']));
-            $resp = $verificacao->buscaregistros($user, $senha);
+            $senhauser = addslashes(htmlspecialchars($_POST['senha']));
+            $resp = $verificacao->buscaregistros($user, $senhauser);
+            echo print_r($resp);
             if ($resp == false) {
                 ?>
                 <script>alert("Conta inesistente! Crie uma agora =)")</script>
@@ -47,11 +48,23 @@
                 session_start();
                 $_SESSION['usuario'] = $resp["usuario"];
                 $_SESSION['nome'] = $resp["nome"];
-                if (isset($_SESSION['usuario']) && isset($_SESSION['nome'])) {
-                    header("location: ../inicio.php");
+                $_SESSION['nivel'] = $resp["nivel"];
+                if (isset($_SESSION['usuario']) && isset($_SESSION['nome']) && isset($_SESSION['nivel'])) {
+                    # header("location: ../inicio_user.php");
+                    if ($resp["nivel"]<3) {
+                        if ($resp["nivel"]==2){
+                            # pagina do adm
+                            header("location: ../inicio_adm.php");
+                        }else {
+                            # pagina do user
+                            header("location: ../inicio_user.php");
+                        }
+                    }else {
+                        # pagina do master
+                        header("location: ../inicio_master.php");
+                    }
                 }
             }
-            
         }
     ?>
 </body>
