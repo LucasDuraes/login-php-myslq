@@ -13,11 +13,11 @@ class verificar{
             exit();
         }
     }
-    public function buscaregistros($user, $senha){
+    public function buscaregistros($user, $senhauser){
         $val_registro = array();//validação de registros
-        $cmd = $this->pdo->prepare("SELECT `usuario`, `nome` FROM `registro-login` WHERE `usuario`=:ue AND `senha`=SHA1(:se);");
+        $cmd = $this->pdo->prepare("SELECT `usuario`, `nome`, `nivel` FROM `registro-login` WHERE `usuario`=:ue AND `senha`=SHA1(:se);");
         $cmd->bindValue(":ue", $user);
-        $cmd->bindValue(":se", $senha);
+        $cmd->bindValue(":se", $senhauser);
         $cmd->execute();
         $val_registro = $cmd->fetch(PDO::FETCH_ASSOC);
         if (empty($val_registro)) {
