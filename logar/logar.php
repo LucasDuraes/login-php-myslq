@@ -12,12 +12,12 @@
     <script src="./javascript./index.js"></script>
 </head>
 <body>
-<header class="cabecalho01">
+    <header class="cabecalho01">
         <a href="../index.php">LOGO</a>
         <nav>
             <ul class="menu">
                 <li><a href="./logar.php">Logar</a></li>
-                <li><a href="#">Registrar-se</a></li>
+                <li><a href="../registrar./registrar.php">Registrar-se</a></li>
                 <li><a href="#">Contato</a></li>
             </ul>
         </nav>
@@ -27,14 +27,14 @@
         <input type="text" name="usuario" id="usuario" placeholder="Nome de Usuário">
         <input type="text" name="senha" id="senha" placeholder="Digite sua Senha">
         <input type="submit" onClick="return validar_dados()" value="LOGAR">
-        <a href="#" class="nova-conta">Ainda não tem conta? Click aqui!</a>
+        <a href="../registrar./registrar.php" class="nova-conta">Ainda não tem conta? Click aqui!</a>
     </form>
     <?php
         if (isset($_POST['usuario'])) {
             $user = addslashes(htmlspecialchars($_POST['usuario']));
             $senhauser = addslashes(htmlspecialchars($_POST['senha']));
             $resp = $verificacao->buscaregistros($user, $senhauser);
-            echo print_r($resp);
+            //echo print_r($resp);
             if ($resp == false) {
                 ?>
                 <script>alert("Conta inesistente! Crie uma agora =)")</script>
@@ -48,7 +48,9 @@
                 session_start();
                 $_SESSION['usuario'] = $resp["usuario"];
                 $_SESSION['nome'] = $resp["nome"];
+                $_SESSION['ativo'] = $resp["ativo"];
                 $_SESSION['nivel'] = $resp["nivel"];
+                $_SESSION['email'] = $resp["email"];
                 if (isset($_SESSION['usuario']) && isset($_SESSION['nome']) && isset($_SESSION['nivel'])) {
                     # header("location: ../inicio_user.php");
                     if ($resp["nivel"]<3) {
