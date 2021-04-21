@@ -12,3 +12,6 @@ Hoje inicie minha primeira seção PHP, apesar de algumas dúvidas, tudo ocorreu
 
 Dia 2021/04/19
 Hoje conclui o condicional para testar o nível de acesso do usuário e redireciona-lo para a pagina de seu respctivo nível. É também iniciei as paginas de usuário master, administrador e usuário comum.  
+
+Dia 2021/04/21
+Hoje fiz um condicional para testar se o usuario está ativo ou não, essa parte foi feita sem problemas. Mas aconteceu um erro com o cabeçalho das paginas o qual ainda não consegui descobri mas descobrirei em breve o que aconteceu e irei explicar para você.
