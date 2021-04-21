@@ -15,7 +15,7 @@ class verificar{
     }
     public function buscaregistros($user, $senhauser){
         $val_registro = array();//validação de registros
-        $cmd = $this->pdo->prepare("SELECT `usuario`, `nome`, `nivel` FROM `registro-login` WHERE `usuario`=:ue AND `senha`=SHA1(:se);");
+        $cmd = $this->pdo->prepare("SELECT `usuario`, `nome`, `ativo`, `nivel`, `email` FROM `registro-login` WHERE `usuario`=:ue AND `senha`=SHA1(:se);");
         $cmd->bindValue(":ue", $user);
         $cmd->bindValue(":se", $senhauser);
         $cmd->execute();
