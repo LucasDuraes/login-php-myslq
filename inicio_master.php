@@ -5,6 +5,21 @@
     }
     echo $_SESSION['usuario']."<br>";
     echo $_SESSION['nome']."<br>";
-    echo $_SESSION['nivel']."<br><br><br>";
+    echo $_SESSION['ativo']."<br>";
+    echo $_SESSION['nivel']."<br>";
+    echo $_SESSION['email']."<br><br>";
     echo "Você e um usuario master."
 ?>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Master - MRR-Racing</title>
+</head>
+<body>
+    <?php
+        require_once './cabecalho.php';
+    ?>
+</body>
+</html>
