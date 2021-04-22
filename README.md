@@ -14,4 +14,7 @@ Dia 2021/04/19
 Hoje conclui o condicional para testar o nível de acesso do usuário e redireciona-lo para a pagina de seu respctivo nível. É também iniciei as paginas de usuário master, administrador e usuário comum.  
 
 Dia 2021/04/21
-Hoje fiz um condicional para testar se o usuario está ativo ou não, essa parte foi feita sem problemas. Mas aconteceu um erro com o cabeçalho das paginas o qual ainda não consegui descobri mas descobrirei em breve o que aconteceu e irei explicar para você.
+Hoje fiz um condicional para testar se o usuario está ativo ou não, essa parte foi feita sem problemas. Mas aconteceu um erro com o cabeçalho das paginas o qual ainda não consegui descobri, mas, descobrirei em breve o que aconteceu e irei explicar para você.
+
+Dia 2021/04/22
+Hoje passai alguns bons minutos à procurar o erro que impedia a exibição do cabeçalho até que descobri que erra um simples erro de link o qual resolvi mas ainda não entendi muito bem o porque desse erro. O erro foi o seguinte &#60;link rel="stylesheet" href="./estilo_registrar./styleregistrar.css"&#62; aparentemente o erro estava nesse link após da um espaço entre a caminho tudo ocorreu da forma que deveria, ficando da seguinte forma &#60;link rel="stylesheet" href="./estilo_registrar ./styleregistrar.css"&#62;.
