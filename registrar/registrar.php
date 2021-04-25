@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrar-se MRR-Racing</title>
     <link rel="stylesheet" href="./estilo_registrar ./styleregistrar.css">
+    <script src="./javascriptre./indexre.js"></script>
 </head>
 <body>
     <header class="cabecalho01">
@@ -37,7 +38,7 @@
         <input type="password" name="senha" id="senha" placeholder="Digite Sua Senha">
         <label for="confirma-senha">Comfirme Sua Senha</label>
         <input type="password" name="confirma-senha" id="confirma-senha" placeholder="Comfirme Sua Senha">
-        <input type="submit" value="Registrar">
+        <input type="submit" onClick="return validardadosregistro()" value="Registrar">
     </form>
 
     <?php
@@ -58,9 +59,7 @@
                 <?php
             } else {
                 //aqui vem um metodo para registrar os usuarios!
-                ?>
-                <script>alert("Você pode ser registrado!")</script>
-                <?php
+                $verificacao->registraruser($nomeusuario, $nome, $sobrenome, $nascimento, $email, $senha);
             }
         }
     ?>
