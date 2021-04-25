@@ -32,3 +32,28 @@ a{
     display: block;
     padding: 10px;
 }
+
+form{
+    width: 410px;
+    background-color: rgba(0,0,0,.2);
+    padding: 20px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+label, input{
+    display: block;
+    align-items: center;
+    line-height: 30px;
+    height: 30px;
+    outline: none;
+    font-size: 13pt;
+    width: 100%;
+    margin-top: 10px;
+    text-align: left;
+}
+
+input[type="submit"]{
+    align-items: center;
+    text-align: center;
+}
