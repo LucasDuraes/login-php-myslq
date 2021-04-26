@@ -18,3 +18,6 @@ Hoje fiz um condicional para testar se o usuario está ativo ou não, essa parte
 
 Dia 2021/04/22
 Hoje passai alguns bons minutos à procurar o erro que impedia a exibição do cabeçalho até que descobri que erra um simples erro de link o qual resolvi mas ainda não entendi muito bem o porque desse erro. O erro foi o seguinte &#60;link rel="stylesheet" href="./estilo_registrar./styleregistrar.css"&#62; aparentemente o erro estava nesse link após da um espaço entre a caminho tudo ocorreu da forma que deveria, ficando da seguinte forma &#60;link rel="stylesheet" href="./estilo_registrar ./styleregistrar.css"&#62;.
+
+Dia 2021/04/22
+Hoje conclui a parte de registro de novos usuarios sem muitos problemas. Então até o momento conclui o necessario do sistema de login e registro, agora quero melhorar a pagina de usuario de acordo com cada nível.
