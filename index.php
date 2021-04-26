@@ -17,6 +17,6 @@
             </ul>
         </nav>
     </header>
-    
+    <?php echo "Olá mundo! =)";?>
 </body>
 </html>
