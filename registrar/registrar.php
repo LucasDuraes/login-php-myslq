@@ -60,6 +60,16 @@
             } else {
                 //aqui vem um metodo para registrar os usuarios!
                 $verificacao->registraruser($nomeusuario, $nome, $sobrenome, $nascimento, $email, $senha);
+                $dadoslogar = $verificacao->logar($nomeusuario, $senha);
+                session_start();
+                $_SESSION['usuario'] = $dadoslogar["usuario"];
+                $_SESSION['nome'] = $dadoslogar["nome"];
+                $_SESSION['ativo'] = $dadoslogar["ativo"];
+                $_SESSION['nivel'] = $dadoslogar["nivel"];
+                $_SESSION['email'] = $dadoslogar["email"];
+                if (isset($_SESSION['usuario']) && isset($_SESSION['nome']) && isset($_SESSION['nivel'])) {
+                    header("location: ../inicio_user.php");
+                }
             }
         }
     ?>

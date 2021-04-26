@@ -41,6 +41,24 @@ class criar{
         $cmd->bindValue(':se', $senha);
         $cmd->execute();
     }
+
+    public function logar($nomeusuario, $senha){
+        $val_registro = array();//validação de registros
+        $cmd = $this->pdo->prepare("SELECT `usuario`, `nome`, `ativo`, `nivel`, `email` FROM `registro-login` WHERE `usuario`=:ue AND `senha`=SHA1(:se);");
+        $cmd->bindValue(":ue", $nomeusuario);
+        $cmd->bindValue(":se", $senha);
+        $cmd->execute();
+        $val_registro = $cmd->fetch(PDO::FETCH_ASSOC);
+        if (empty($val_registro)) {
+            //se for false
+            return false;
+            exit();
+        } else {
+            //se for true
+            return $val_registro;
+        }
+        
+    }
 }
 
 ?>
