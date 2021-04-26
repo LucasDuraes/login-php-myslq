@@ -6,12 +6,11 @@
     if ($_SESSION['ativo'] != 1) {
         header('location: voceestabanido.php');
     }
-    echo $_SESSION['usuario']."<br>";
-    echo $_SESSION['nome']."<br>";
-    echo $_SESSION['ativo']."<br>";
-    echo $_SESSION['nivel']."<br>";
-    echo $_SESSION['email']."<br><br>";
-    echo "Você e um usuario adm."
+    $_SESSION['usuario'];
+    $_SESSION['nome'];
+    $_SESSION['ativo'];
+    $_SESSION['nivel'];
+    $_SESSION['email'];
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -32,5 +31,10 @@
             </ul>
         </nav>
     </header>
+    <?php
+        echo $_SESSION['usuario']."<br>";
+        echo $_SESSION['nome']."<br>";
+        echo $_SESSION['email']."<br>";
+    ?>
 </body>
 </html>
